@@ -29,6 +29,12 @@ ODMR spectrum
 
 Classical ODMR fitting is strong on clean spectra, but it can become slow and brittle under low signal-to-noise ratio, distorted resonance dips, high-throughput widefield settings, or poor initialization. NVBench is designed to measure when classical fitting is enough and when ML inference becomes more practical.
 
+## Current research basis
+
+NVBench is aligned with recent work showing that ODMR analysis can become a bottleneck in NV-diamond sensing workflows, especially under low SNR and high-throughput imaging conditions. The near-term project direction is to build an open engineering toolkit around this problem rather than claiming that ML universally replaces fitting.
+
+See `docs/PROJECT_PLAN.md`, `docs/RESEARCH_NOTES.md`, and `docs/DATASETS.md` for the plan and source map.
+
 ## Installation
 
 ```bash
