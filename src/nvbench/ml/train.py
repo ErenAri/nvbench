@@ -37,7 +37,7 @@ def train_splitting_regressor(
     prediction = model.predict(x_test)
     report = RegressionReport(
         mae=float(mean_absolute_error(y_test, prediction)),
-        rmse=float(mean_squared_error(y_test, prediction, squared=False)),
+        rmse=float(np.sqrt(mean_squared_error(y_test, prediction))),
         train_size=int(len(y_train)),
         test_size=int(len(y_test)),
     )
