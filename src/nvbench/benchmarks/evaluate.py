@@ -7,7 +7,6 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from numpy.typing import NDArray
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 from nvbench.data.loaders import load_synthetic_csv, pivot_spectra
@@ -37,7 +36,7 @@ def benchmark_fitting(frame: pd.DataFrame, limit: int | None = None) -> dict[str
 
     if success_mask.any():
         mae = float(mean_absolute_error(y_true[success_mask], y_pred[success_mask]))
-        rmse = float(mean_squared_error(y_true[success_mask], y_pred[success_mask], squared=False))
+        rmse = float(np.sqrt(mean_squared_error(y_true[success_mask], y_pred[success_mask])))
     else:
         mae = float("nan")
         rmse = float("nan")
